@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    id="cordova-plugin-transparent-status-bar"
+    version="1.0.0">
+
+    <name>Transparent status bar</name>
+
+    <js-module src="www/transparentstatusbar.js" name="transparentstatusbar">
+        <clobbers target="Transparentstatusbar" />
+    </js-module>
+
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Transparentstatusbar">
+                <param name="android-package" value="it.tangodev.plugin.Transparentstatusbar"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Transparentstatusbar.java" target-dir="src/it/tangodev/plugin/"/>
+    </platform>
+</plugin>
