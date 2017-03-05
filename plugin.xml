@@ -14,9 +14,17 @@
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Transparentstatusbar">
                 <param name="android-package" value="it.tangodev.plugin.Transparentstatusbar"/>
+                <param name="onload" value="true" />
             </feature>
         </config-file>
 
         <source-file src="src/android/Transparentstatusbar.java" target-dir="src/it/tangodev/plugin/"/>
+
+        <resource-file src="src/android/res/values/styles.xml" target="res/values/styles.xml" />
+        <resource-file src="src/android/res/values-v19/styles.xml" target="res/values-v19/styles.xml" />
+
+        <edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:name='MainActivity']" mode="merge">
+            <activity android:theme="@style/AppTheme" />
+        </edit-config>
     </platform>
 </plugin>
