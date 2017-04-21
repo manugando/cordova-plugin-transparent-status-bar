@@ -1,7 +1,19 @@
 /*global cordova, module*/
 
 module.exports = {
-    enable: function (successCallback, errorCallback) {
-        cordova.exec(successCallback, errorCallback, "Transparentstatusbar", "enable", []);
+    init: function (callback) {
+        cordova.exec(function(result) {
+            if(result == 1) {
+                document.body.className += ' ' + 'has-transparent-statusbar';
+            }
+            if(callback !== undefined) {
+                callback(result);
+            }
+        }, function(error) {
+            console.log(error);
+            if(callback !== undefined) {
+                callback(-1);
+            }
+        }, "Transparentstatusbar", "isTransparent", []);
     }
 };
