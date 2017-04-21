@@ -18,5 +18,7 @@ If the status bar is transparent, in your body tag there will be a new class: *h
 ## Compatibility with cordova-plugin-statusbar plugin
 To use this plugin with **cordova-plugin-statusbar** (for instance, if your app runs also on iOS and you want to style the iOS status bar with cordova-plugin-statusbar plugin) you have to add this row to your **config.xml** file:
 ```
-<preference name="StatusBarBackgroundColor" value=""/>
+<platform name="android">
+  <preference name="StatusBarBackgroundColor" value=""/>
+</platform>
 ```
